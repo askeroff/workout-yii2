@@ -11,8 +11,8 @@ About
 
 Таблица days
   
-  *id (int, primary, auto_increment)
-  *date (date)
-  *name (varchar)
-  *feeling(varchar)
-  *time(int)
+  * id (int, primary, auto_increment)
+  * date (date)
+  * name (varchar)
+  * feeling(varchar)
+  * time(int)
