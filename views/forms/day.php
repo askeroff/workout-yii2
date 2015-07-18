@@ -1,4 +1,5 @@
 <?php
+$this->title = $model->name . " - " . $model->date;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 ?>
