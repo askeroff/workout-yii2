@@ -17,10 +17,21 @@ use yii\widgets\ActiveForm;
 
 <h1 class="text-center">Упражнения</h1>
 
-<?php //$exercise = ActiveForm::begin(); ?>
+<?php
 
+?>
 
-<?php //ActiveForm::end(); ?>
+<?php $exerciseForm = ActiveForm::begin(); ?>
+    
+    <?= $exerciseForm->field($exercise, 'exercise') ?>
+    <?= $exerciseForm->field($exercise, 'reps') ?>
+    <?= $exerciseForm->field($exercise, 'sets') ?>
+
+     <div class="form-group">
+        <?= Html::submitButton('Добавить', ['class' => 'btn btn-primary']) ?>
+    </div>
+
+<?php ActiveForm::end(); ?>
 
 
 

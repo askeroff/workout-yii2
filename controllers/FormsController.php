@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\Forms;
+use app\models\Exercise;
 
 class FormsController extends Controller {
 
@@ -25,8 +26,18 @@ class FormsController extends Controller {
 }
 
 	public function actionDay($id){
-	 $id = $_GET['id'];
-	 return $this->render('day', ['day' => $id, 'model' => Forms::find()
+     $exercise = new Exercise();
+
+     #Добавление упражнения к текущему дню
+     if($exercise->load(Yii::$app->request->post()) && $exercise->validate()){
+        $exercise->p_id = $id; //айди для опознания к какому дню упражнение
+        $exercise->save();
+
+        return $this->render('day', ['day' => $id, 'exercise' => $exercise, 'model' => Forms::find()
+        ->where(['id' => $id])->one()]);
+     }
+
+	 return $this->render('day', ['day' => $id, 'exercise' => $exercise, 'model' => Forms::find()
     ->where(['id' => $id])->one()]);
 	}
 
