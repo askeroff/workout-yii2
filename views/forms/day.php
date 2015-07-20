@@ -14,7 +14,9 @@ use yii\widgets\ActiveForm;
 <span class="day-info-text"><?= $model->feeling ?></span> </h3>
 
 
-
+<?php 
+if(count($exercises)) {
+?>
 <h1 class="text-center">Упражнения</h1>
 
 <div class="container exercises">
@@ -29,6 +31,7 @@ use yii\widgets\ActiveForm;
 		Подходы: 
 	</div>
 	</div>
+
 <?php
 foreach ($exercises as $ex ) {
 ?>
@@ -49,7 +52,10 @@ foreach ($exercises as $ex ) {
 <?php
 }
 ?>
+
 </div>
+
+<?php }?>
 
 <h1 class="text-center">Добавить упражнение</h1>
 <?php $exerciseForm = ActiveForm::begin(); ?>
