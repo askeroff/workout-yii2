@@ -139,3 +139,31 @@ transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 .day-info-text{
     font-size: 18px;
 }
+
+.exercises{
+    margin: 50px 0px;
+}
+
+.exercises-titles{
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    background: #2E5372 !important;
+    color: #fff;
+}
+
+
+.exercises .row{
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.exercises .row:nth-child(even){
+    background: #ffffff;
+
+}
+
+.exercises .row:nth-child(odd){
+    background: #ededed;
+}

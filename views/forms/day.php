@@ -17,10 +17,41 @@ use yii\widgets\ActiveForm;
 
 <h1 class="text-center">Упражнения</h1>
 
+<div class="container exercises">
+<div class="row exercises-titles">
+	<div class="col-md-4">
+		Упражнения: 
+	</div>
+	<div class="col-md-4">
+		Повторения: 
+	</div>
+	<div class="col-md-4">
+		Подходы: 
+	</div>
+	</div>
 <?php
-
+foreach ($exercises as $ex ) {
 ?>
 
+
+<div class="row">
+	<div class="col-md-4">
+		 <?= $ex->exercise ?>
+	</div>
+	<div class="col-md-4">
+		 <?= $ex->reps ?>
+	</div>
+	<div class="col-md-4">
+		 <?= $ex->sets ?>
+	</div>
+	</div>
+
+<?php
+}
+?>
+</div>
+
+<h1 class="text-center">Добавить упражнение</h1>
 <?php $exerciseForm = ActiveForm::begin(); ?>
     
     <?= $exerciseForm->field($exercise, 'exercise') ?>
