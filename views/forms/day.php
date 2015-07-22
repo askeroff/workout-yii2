@@ -2,6 +2,7 @@
 $this->title = $model->name . " - " . $model->date;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+
 ?>
 
 <h3 class="day-info"><span style="color:#015B82">Дата:</span> 
@@ -17,18 +18,21 @@ use yii\widgets\ActiveForm;
 <?php 
 if(count($exercises)) {
 ?>
-<h1 class="text-center">Упражнения</h1>
 
 <div class="container exercises">
 <div class="row exercises-titles">
-	<div class="col-md-4">
+	<div class="col-md-6">
 		Упражнения: 
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-2">
 		Повторения: 
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-2">
+		
 		Подходы: 
+	</div>
+	<div class="col-md-2">
+		<i style="text-align:right;" class="glyphicon glyphicon-cog"></i>
 	</div>
 	</div>
 
@@ -38,14 +42,23 @@ foreach ($exercises as $ex ) {
 
 
 <div class="row">
-	<div class="col-md-4">
+	<div class="col-md-6">
 		 <?= $ex->exercise ?>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-2">
 		 <?= $ex->reps ?>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-2">
 		 <?= $ex->sets ?>
+	</div>
+	<div class="col-md-2 settings">
+		<span>
+		<a href="/?r=exercise/data&id=<?= $ex->id ?> ">
+		<i class="glyphicon glyphicon-remove"></i></a>
+		</span>
+		<span>
+			<i class="glyphicon glyphicon-edit"></i>
+		</span>
 	</div>
 	</div>
 

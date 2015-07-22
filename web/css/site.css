@@ -146,24 +146,42 @@ transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 
 .exercises-titles{
     font-weight: bold;
-    font-size: 24px;
-    text-align: center;
-    background: #2E5372 !important;
+    font-size: 21px;
+    background: #2E2E2E !important;
     color: #fff;
+}
+
+.exercises-titles .col-md-2:last-child{
+text-align: center;
 }
 
 
 .exercises .row{
-    height: 60px;
-    line-height: 60px;
-    text-align: center;
+    height: 40px;
+    line-height: 40px;
 }
 
+
+
 .exercises .row:nth-child(even){
-    background: #ffffff;
+    background: #2C3552;
+    color: #fff;
 
 }
 
 .exercises .row:nth-child(odd){
     background: #ededed;
+
+}
+
+.settings{
+    text-align: center;
+}
+
+.settings span{
+    padding-right: 10px;
+}
+
+.settings span:hover{
+    cursor: pointer;
 }
