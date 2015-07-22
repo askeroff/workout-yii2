@@ -18,6 +18,10 @@ use yii\widgets\LinkPager;
         <a href="http://workout.web/?r=forms/day&id=<?= $day->id ?> ">
         <?= Html::encode("{$day->name} ({$day->date})") ?>:
         <?= $day->feeling ?></a>
+       <a style="float: right;" title="Удалить" href="/?r=forms/data&del=yes&id=<?= $day->id ?>">
+		<i class="glyphicon glyphicon-remove"></i></a>
+		 <a style="float: right;margin-right:10px;" title="Редактировать" href="/?r=forms/data&edit=yes&id=<?= $day->id ?>">
+		<i class="glyphicon glyphicon-edit"></i></a>
     </li>
 <?php endforeach; ?>
 

@@ -49,8 +49,31 @@ class FormsController extends Controller {
         ]);
 	}
 
+    public function actionData($id){
 
+        if(isset($_GET['del'])) {
+        
+        return $this->render('data', [
+        'id' => $id, 
+        'forms' => Forms::find()->where(['id' => $id])->one()->delete(),
+        'exercises' => Exercise::deleteAll(['p_id' => $id])
+        ]);
+ }
 
+ elseif(isset($_GET['edit']) && isset($_POST['Forms'])) {
+    $f = Forms::find()->where(['id' => $id])->one();
+    $f->load(Yii::$app->request->post()); $f->save();
+    echo "<script>location.href = '/';</script>";
+ }
+
+ elseif(isset($_GET['edit'])){
+
+return $this->render('data', [
+        'id' => $id, 
+        'forms' => Forms::find()->where(['id' => $id])->one(),
+        ]);
+}
 }
 
+}
 ?>
