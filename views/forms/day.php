@@ -21,17 +21,17 @@ if(count($exercises)) {
 
 <div class="container exercises">
 <div class="row exercises-titles">
-	<div class="col-md-6">
+	<div class="col-md-3">
 		Упражнения: 
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-3">
 		Повторения: 
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-3">
 		
 		Подходы: 
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-3">
 		<i style="text-align:right;" class="glyphicon glyphicon-cog"></i>
 	</div>
 	</div>
@@ -42,23 +42,20 @@ foreach ($exercises as $ex ) {
 
 
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-3">
 		 <?= $ex->exercise ?>
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-3">
 		 <?= $ex->reps ?>
 	</div>
-	<div class="col-md-2">
+	<div class="col-md-3">
 		 <?= $ex->sets ?>
 	</div>
-	<div class="col-md-2 settings">
-		<span>
-		<a href="/?r=exercise/data&id=<?= $ex->id ?> ">
+	<div class="col-md-3 settings">
+		
+		<a title="Удалить" href="/?r=exercise/data&id=<?= $ex->id ?> ">
 		<i class="glyphicon glyphicon-remove"></i></a>
-		</span>
-		<span>
-			<i class="glyphicon glyphicon-edit"></i>
-		</span>
+		
 	</div>
 	</div>
 

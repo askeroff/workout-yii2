@@ -10,9 +10,20 @@ About
 ------------
 
 Таблица days
-  
+------------
+
   * id (int, primary, auto_increment)
   * date (date)
   * name (varchar)
   * feeling(varchar)
   * time(int)
+
+Таблица exercises  
+------------
+ * id (int, primary, auto_increment)
+ * p_id (int)
+ * exercise (varchar)
+ * reps (int)
+ * sets (int)
+
+
